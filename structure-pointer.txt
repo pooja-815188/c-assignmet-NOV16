@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+ typedef struct student
+{
+    int roll;
+    char name[10];
+    float marks;
+}stu;
+
+int main()
+{
+   stu s;
+   stu *ptr=(stu*)malloc(sizeof(stu));
+   int i;
+   printf("enter a student information\n");
+   for(i=0;i<2;i++)
+   {
+      scanf("%d %s %f",&(ptr+i)->roll,(ptr+i)->name,&(ptr+i)->marks); 
+   }
+   printf("student informations are\n");
+   for(i=0;i<2;i++)
+   {
+      printf("%d %s %f\n",(ptr+i)->roll,(ptr+i)->name,(ptr+i)->marks); 
+   }
+}
